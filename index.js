@@ -37,7 +37,7 @@ client.on('messageCreate', msg => {
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
   if (command === 'ping'){
-    msg.reply('pong!');
+    client.commands.get('ping').execute(msg, args);
   }
 })
 client.login(process.env.DISCORD_TOKEN);
