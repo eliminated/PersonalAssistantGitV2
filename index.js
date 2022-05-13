@@ -34,6 +34,9 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', msg => {
+
+  if(message.content.toLowerCase().includes('good bot'))
+  
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
   if (command === 'ping'){
