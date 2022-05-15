@@ -15,7 +15,6 @@ module.exports = {
                     { name: '**User Discriminator**', value: `${message.author.discriminator}`, inline: true },
                     { name: '**User Avatar URL**', value: `${message.author.avatarURL()}`, inline: true },
                     { name: '**User Created At**', value: `${message.author.createdAt}`, inline: true },
-                    { name: '**User Status**', value: `${message.author.presence.status}`, inline: true },
                     // User nickname. NOTE: This is only available if the user has set a nickname.
                     { name: '**User Nickname**', value: `${message.member.nickname ? message.member.nickname : 'None'}`, inline: true },
                 )
@@ -38,7 +37,7 @@ module.exports = {
                     { name: '**User Discriminator**', value: `${user.discriminator}`, inline: true },
                     { name: '**User Avatar URL**', value: `${user.avatarURL()}`, inline: true },
                     { name: '**User Created At**', value: `${user.createdAt}`, inline: true },
-                    { name: '**User Status**', value: `${user.presence.status}`, inline: true },
+                    { name: '**Nickname**', value: `${message.guild.members.cache.get(user.id).nickname ? message.guild.members.cache.get(user.id).nickname : 'None'}`, inline: true },
                 )
                 .setTimestamp()
                 .setFooter(`Requested by ${message.author.username}`, message.author.avatarURL());
