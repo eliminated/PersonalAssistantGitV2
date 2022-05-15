@@ -1,3 +1,4 @@
-module.exports = () => {
-    console.log('Our bot is now ready to go!');
+module.exports = (client) => {
+    console.log(`${client.user.username} is ready to serve!`);
+    client.user.setActivity('-!help', { type: 'PLAYING' });
 };

@@ -1,8 +1,11 @@
 module.exports = {
     name: 'calculate',
     description: 'Calculates a math expression.',
+    usage: '-!calculate <expression>',
     async execute(client, message, args, Discord) {
         if(!args[0]) return message.channel.send('Please provide a math expression.');
+        // Example Usage: !calculate 1 + 1
+        // Function required user to seperate between two numbers and the operator. I.e. !calculate <number> <operator> <number>
         try {
             const result = eval(args.join(' '));
             let embed = new Discord.MessageEmbed()
@@ -16,6 +19,4 @@ module.exports = {
             message.channel.send(`Error: ${e}`);
         }
     }
-    
-    
 }
