@@ -27,7 +27,7 @@ module.exports = {
                 .setColor('#ff0000')
                 .setTitle('__**WARNING**__')
                 .addFields(
-                    { name: '**Moderaor:**', value: `${message.author.username}`},
+                    { name: '**Moderator:**', value: `${message.author.username}`},
                     { name: '**User:**', value: `${member.user.username}`},
                     { name: '**Reason:**', value: `${reason}`},
                 )
